@@ -92,16 +92,26 @@ export default {
           '60%': { transform: 'scale(1.1)', opacity: '1' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
-        'pulse-glow': {
+        'pulse-glow-effect': { // Renamed keyframe
           '0%, 100%': { textShadow: '0 0 8px hsl(var(--primary)), 0 0 12px hsl(var(--primary)), 0 0 16px hsl(var(--primary))' },
           '50%': { textShadow: '0 0 12px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 28px hsl(var(--primary))' },
+        },
+        'loading-zoom-out': {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '100%': { transform: 'scale(15)', opacity: '0' },
+        },
+        'loading-fade-out': {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
         }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
         'bubble-in': 'bubble-in 0.8s ease-out forwards',
-        'pulse-glow': 'pulse-glow 2s infinite ease-in-out',
+        'pulse-glow-anim': 'pulse-glow-effect 2s infinite ease-in-out', // Renamed animation utility
+        'loading-zoom-out': 'loading-zoom-out 1s ease-in forwards',
+        'loading-fade-out': 'loading-fade-out 0.5s ease-out forwards',
   		}
   	}
   },

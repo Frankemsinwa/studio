@@ -13,32 +13,45 @@ import { ExperienceSection } from '@/components/sections/ExperienceSection';
 import { AiPairingSection } from '@/components/sections/AiPairingSection';
 
 export function ClientPageWrapper() {
-  const [isLoading, setIsLoading] = useState(true);
-  // const aiPairingSectionRef = useRef<HTMLElement>(null); // No longer primary target for hero button
+  const [showLoadingScreenInitialContent, setShowLoadingScreenInitialContent] = useState(true);
+  const [startFiveZoomAnimation, setStartFiveZoomAnimation] = useState(false);
+  const [isAppReadyForDisplay, setIsAppReadyForDisplay] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
+    const initialContentTimer = setTimeout(() => {
+      setShowLoadingScreenInitialContent(false); // Hide "Loading the vibe..." text & spinner
+      setStartFiveZoomAnimation(true);           // Start the '5' zoom animation
+    }, 1500); // Duration for "Loading the vibe..." text & spinner to be visible
 
     const header = document.querySelector('header');
     if (header) {
       document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
     }
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(initialContentTimer);
+    };
   }, []);
 
+  const handleFiveZoomAnimationComplete = () => {
+    setIsAppReadyForDisplay(true); // Entire loading sequence finished, app is ready
+  };
+
   const handleEnterVibeClick = () => {
-    // Now scrolls to the Flavor section, which is the first content section
-    const section = document.getElementById('flavor-section'); 
+    const section = document.getElementById('flavor-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  if (isLoading) {
-    return <LoadingScreen />;
+  if (!isAppReadyForDisplay) {
+    return (
+      <LoadingScreen
+        showInitialContent={showLoadingScreenInitialContent}
+        startZoom={startFiveZoomAnimation}
+        onZoomComplete={handleFiveZoomAnimationComplete}
+      />
+    );
   }
 
   return (
@@ -50,7 +63,7 @@ export function ClientPageWrapper() {
         <IdentitySection />
         <VibeRoomSection />
         <ExperienceSection />
-        <AiPairingSection /> {/* This section is now after the new ones */}
+        <AiPairingSection />
       </main>
       <AppFooter />
     </div>
