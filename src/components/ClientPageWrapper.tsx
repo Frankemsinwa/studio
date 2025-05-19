@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -5,30 +6,32 @@ import { AppHeader } from '@/components/layout/AppHeader';
 import { AppFooter } from '@/components/layout/AppFooter';
 import { LoadingScreen } from '@/components/sections/LoadingScreen';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { FlavorSection } from '@/components/sections/FlavorSection';
+import { IdentitySection } from '@/components/sections/IdentitySection';
+import { VibeRoomSection } from '@/components/sections/VibeRoomSection';
+import { ExperienceSection } from '@/components/sections/ExperienceSection';
 import { AiPairingSection } from '@/components/sections/AiPairingSection';
 
 export function ClientPageWrapper() {
   const [isLoading, setIsLoading] = useState(true);
-  const aiPairingSectionRef = useRef<HTMLElement>(null);
+  // const aiPairingSectionRef = useRef<HTMLElement>(null); // No longer primary target for hero button
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500); // Adjust as needed
+    }, 2500);
 
-    // Set header height for HeroSection calculation
     const header = document.querySelector('header');
     if (header) {
       document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
     }
 
-
     return () => clearTimeout(timer);
   }, []);
 
   const handleEnterVibeClick = () => {
-    const section = document.getElementById('ai-pairing-section');
+    // Now scrolls to the Flavor section, which is the first content section
+    const section = document.getElementById('flavor-section'); 
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
@@ -43,7 +46,11 @@ export function ClientPageWrapper() {
       <AppHeader />
       <main className="flex-grow">
         <HeroSection onEnterVibeClick={handleEnterVibeClick} />
-        <AiPairingSection />
+        <FlavorSection />
+        <IdentitySection />
+        <VibeRoomSection />
+        <ExperienceSection />
+        <AiPairingSection /> {/* This section is now after the new ones */}
       </main>
       <AppFooter />
     </div>
