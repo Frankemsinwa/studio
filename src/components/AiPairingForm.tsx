@@ -11,7 +11,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Music, Zap, Play } from 'lucide-react'; // Added Play icon
+import { Loader2, Music, Zap, Play } from 'lucide-react';
 
 const foodItems = [
   "Jollof Rice",
@@ -64,6 +64,14 @@ export function AiPairingForm() {
       });
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handlePlayOnSpotify = () => {
+    if (pairingResult?.songTitle) {
+      // Construct a search query. Adding "Davido" to narrow down results.
+      const searchQuery = encodeURIComponent(`${pairingResult.songTitle} Davido`);
+      window.open(`https://open.spotify.com/search/${searchQuery}`, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -133,7 +141,7 @@ export function AiPairingForm() {
             <Button
               variant="outline"
               className="w-full flex items-center justify-center gap-2 border-primary/50 hover:bg-primary/10 hover:border-primary text-foreground"
-              onClick={() => alert(`Playing "${pairingResult.songTitle}" on Spotify (placeholder)`)}
+              onClick={handlePlayOnSpotify}
               aria-label={`Play ${pairingResult.songTitle} on Spotify`}
             >
               <Play className="h-5 w-5 text-primary" />
