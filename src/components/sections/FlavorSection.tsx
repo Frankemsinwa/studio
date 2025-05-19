@@ -7,9 +7,9 @@ import { motion } from 'framer-motion'; // For potential future animations
 
 export function FlavorSection() {
   const dishes = [
-    { name: 'Jollof Rice Deluxe', description: 'A smoky, party-style jollof with all the trimmings.', imgSrc: 'https://placehold.co/600x400.png', hint: 'jollof rice' },
-    { name: 'Suya Sensation', description: 'Perfectly spiced beef suya, grilled to perfection.', imgSrc: 'https://placehold.co/600x400.png', hint: 'suya grill' },
-    { name: 'Egusi Excellence', description: 'Rich egusi soup with pounded yam, a true classic.', imgSrc: 'https://placehold.co/600x400.png', hint: 'egusi soup' },
+    { name: 'Jollof Rice Deluxe', description: 'A smoky, party-style jollof with all the trimmings.', imgSrc: 'https://images.unsplash.com/photo-1539755530862-00f623c00f52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxqb2xsb2YlMjByaWNlfGVufDB8fHx8MTc0NzY1MDk4OHww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'jollof rice' },
+    { name: 'Suya Sensation', description: 'Perfectly spiced beef suya, grilled to perfection.', imgSrc: 'https://images.unsplash.com/photo-1494358856891-c9a46d446c39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3V5YSUyMGdyaWxsfGVufDB8fHx8MTc0NzY1MDk4OHww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'suya grill' },
+    { name: 'Egusi Excellence', description: 'Rich egusi soup with pounded yam, a true classic.', imgSrc: 'https://images.unsplash.com/photo-1707897634957-e9fde6eab972?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlZ3VzaSUyMHNvdXB8ZW58MHx8fHwxNzQ3NjUwOTg4fDA&ixlib=rb-4.1.0&q=80&w=1080', hint: 'egusi soup' },
     { name: 'Plantain Paradise', description: 'Sweet, caramelized fried plantains.', imgSrc: 'https://placehold.co/600x400.png', hint: 'fried plantain' },
     { name: 'Chapman Chill', description: 'Our signature refreshing Nigerian Chapman cocktail.', imgSrc: 'https://placehold.co/600x400.png', hint: 'chapman cocktail' },
   ];
