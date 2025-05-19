@@ -8,9 +8,9 @@ import { MessageCircle, Youtube, ShoppingBag } from 'lucide-react';
 
 export function ExperienceSection() {
   const reviews = [
-    { author: 'Opeyemi Foodie', text: 'Absolutely vibing with these flavors!', platform: 'Twitter', imgSrc: 'https://placehold.co/80x80.png', hint: 'person avatar' },
-    { author: 'Lagos Gourmet', text: 'Five stars for 5iVE Kitchen!', platform: 'Instagram', imgSrc: 'https://placehold.co/80x80.png', hint: 'food blogger' },
-    { author: 'NaijaEats', text: 'Best new spot in town.', platform: 'TikTok', imgSrc: 'https://placehold.co/80x80.png', hint: 'social media user' },
+    { author: 'Opeyemi Foodie', text: 'Absolutely vibing with these flavors!', platform: 'Twitter', imgSrc: 'https://images.unsplash.com/photo-1625566303586-8094a177b746?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBhdmF0YXJ8ZW58MHx8fHwxNzQ3NTMxNjc5fDA&ixlib=rb-4.1.0&q=80&w=1080', hint: 'person avatar' },
+    { author: 'Lagos Gourmet', text: 'Five stars for 5iVE Kitchen!', platform: 'Instagram', imgSrc: 'https://images.unsplash.com/photo-1508039632256-9974d5447e92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmb29kJTIwYmxvZ2dlcnxlbnwwfHx8fDE3NDc2NTEzMzB8MA&ixlib=rb-4.1.0&q=80&w=1080', hint: 'food blogger' },
+    { author: 'NaijaEats', text: 'Best new spot in town.', platform: 'TikTok', imgSrc: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzb2NpYWwlMjBtZWRpYSUyMHVzZXJ8ZW58MHx8fHwxNzQ3NjUxMzI5fDA&ixlib=rb-4.1.0&q=80&w=1080', hint: 'social media user' },
   ];
 
   return (
@@ -80,3 +80,4 @@ export function ExperienceSection() {
 // className="pattern-dots pattern-primary pattern-bg-transparent pattern-opacity-10 pattern-size-8"
 // Assuming `tailwindcss-patterns` or similar plugin is configured or you'd define these manually in globals.css
 // For now, the effect will be minimal without the plugin.
+
