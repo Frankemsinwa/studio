@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 export default {
     darkMode: ["class"],
@@ -9,6 +10,9 @@ export default {
   ],
   theme: {
   	extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -82,11 +86,22 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        'bubble-in': {
+          '0%': { transform: 'scale(0.5)', opacity: '0' },
+          '60%': { transform: 'scale(1.1)', opacity: '1' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { textShadow: '0 0 8px hsl(var(--primary)), 0 0 12px hsl(var(--primary)), 0 0 16px hsl(var(--primary))' },
+          '50%': { textShadow: '0 0 12px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 28px hsl(var(--primary))' },
+        }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'bubble-in': 'bubble-in 0.8s ease-out forwards',
+        'pulse-glow': 'pulse-glow 2s infinite ease-in-out',
   		}
   	}
   },
