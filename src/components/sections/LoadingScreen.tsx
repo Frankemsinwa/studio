@@ -1,6 +1,6 @@
 'use client';
 
-import { Spoon } from 'lucide-react';
+import { SoupIcon } from 'lucide-react';
 
 export function LoadingScreen() {
   return (
@@ -12,7 +12,7 @@ export function LoadingScreen() {
         5
       </div>
       <div className="flex items-center space-x-3 animate-bubble-in" style={{ animationDelay: '0.5s' }}>
-        <Spoon className="h-10 w-10 text-primary animate-spin" style={{ animationDuration: '1.5s' }} />
+        <SoupIcon className="h-10 w-10 text-primary animate-spin" style={{ animationDuration: '1.5s' }} />
         <p className="text-lg text-muted-foreground tracking-wider">Loading the Vibe...</p>
       </div>
     </div>
