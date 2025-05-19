@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -10,7 +11,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Music, Zap } from 'lucide-react';
+import { Loader2, Music, Zap, Play } from 'lucide-react'; // Added Play icon
 
 const foodItems = [
   "Jollof Rice",
@@ -127,6 +128,17 @@ export function AiPairingForm() {
               Song: <span className="text-accent-foreground font-bold">{pairingResult.songTitle}</span>
             </p>
             <p className="mt-2 text-muted-foreground italic">"{pairingResult.reason}"</p>
+          </div>
+          <div className="w-full pt-4">
+            <Button
+              variant="outline"
+              className="w-full flex items-center justify-center gap-2 border-primary/50 hover:bg-primary/10 hover:border-primary text-foreground"
+              onClick={() => alert(`Playing "${pairingResult.songTitle}" on Spotify (placeholder)`)}
+              aria-label={`Play ${pairingResult.songTitle} on Spotify`}
+            >
+              <Play className="h-5 w-5 text-primary" />
+              Play on Spotify
+            </Button>
           </div>
         </CardFooter>
       )}
