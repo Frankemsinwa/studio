@@ -7,11 +7,11 @@ import { Music, Disc3, Utensils } from 'lucide-react';
 
 export function VibeRoomSection() {
   const items = [
-    { type: 'food', name: 'Jollof Beats', imgSrc: 'https://placehold.co/300x300.png', hint: 'jollof plate' },
-    { type: 'track', name: 'Fall - Davido', imgSrc: 'https://placehold.co/300x300.png', hint: 'music album cover' },
-    { type: 'food', name: 'Suya Grooves', imgSrc: 'https://placehold.co/300x300.png', hint: 'suya skewer' },
-    { type: 'track', name: 'If - Davido', imgSrc: 'https://placehold.co/300x300.png', hint: 'davido concert' },
-    { type: 'food', name: 'Pounded Yam Rhythms', imgSrc: 'https://placehold.co/300x300.png', hint: 'pounded yam' },
+    { type: 'food', name: 'Jollof Beats', imgSrc: 'https://images.unsplash.com/photo-1461555806864-d8b528023e7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxqb2xsb2YlMjBwbGF0ZXxlbnwwfHx8fDE3NDc2NTExOTl8MA&ixlib=rb-4.1.0&q=80&w=1080', hint: 'jollof plate' },
+    { type: 'track', name: 'Fall - Davido', imgSrc: 'https://images.unsplash.com/photo-1531505791729-054361374207?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtdXNpYyUyMGFsYnVtJTIwY292ZXJ8ZW58MHx8fHwxNzQ3NjUxMjAwfDA&ixlib=rb-4.1.0&q=80&w=1080', hint: 'music album cover' },
+    { type: 'food', name: 'Suya Grooves', imgSrc: 'https://images.unsplash.com/photo-1528909760809-0251be5d2111?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdXlhJTIwc2tld2VyfGVufDB8fHx8MTc0NzY1MTIwMHww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'suya skewer' },
+    { type: 'track', name: 'If - Davido', imgSrc: 'https://images.unsplash.com/photo-1468359601543-843bfaef291a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXZpZG8lMjBjb25jZXJ0fGVufDB8fHx8MTc0NzY1MTIwMHww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'davido concert' },
+    { type: 'food', name: 'Pounded Yam Rhythms', imgSrc: 'https://images.unsplash.com/photo-1701068116410-95d0aff2697d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwb3VuZGVkJTIweWFtfGVufDB8fHx8MTc0NzY1MTIwMHww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'pounded yam' },
   ];
 
   return (
