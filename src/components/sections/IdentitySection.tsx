@@ -6,11 +6,11 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'; // Using sc
 
 export function IdentitySection() {
   const stories = [
-    { title: 'Lagos Love', content: 'Davido\'s heart beats for Lagos, the vibrant city that shaped him.', imgSrc: 'https://placehold.co/400x600.png', hint: 'Lagos skyline' },
-    { title: 'Jollof & Suya', content: 'His go-to comfort foods: a plate of smoky Jollof and spicy Suya.', imgSrc: 'https://placehold.co/400x600.png', hint: 'jollof suya' },
-    { title: 'Album Milestones', content: '"Timeless" breaking records, a testament to his enduring artistry.', imgSrc: 'https://placehold.co/400x600.png', hint: 'music award' },
-    { title: 'Atlanta Roots', content: 'His formative years in Atlanta infused his music with global appeal.', imgSrc: 'https://placehold.co/400x600.png', hint: 'Atlanta cityscape' },
-    { title: 'Philanthropic Heart', content: 'Beyond music, Davido\'s generosity touches countless lives.', imgSrc: 'https://placehold.co/400x600.png', hint: 'community charity' },
+    { title: 'Lagos Love', content: 'Davido\'s heart beats for Lagos, the vibrant city that shaped him.', imgSrc: 'https://images.unsplash.com/photo-1719314313652-d9835e0c52c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxMYWdvcyUyMHNreWxpbmV8ZW58MHx8fHwxNzQ3NjUxMTE1fDA&ixlib=rb-4.1.0&q=80&w=1080', hint: 'Lagos skyline' },
+    { title: 'Jollof & Suya', content: 'His go-to comfort foods: a plate of smoky Jollof and spicy Suya.', imgSrc: 'https://images.unsplash.com/photo-1665556899022-9761f95769e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxqb2xsb2YlMjBzdXlhfGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'jollof suya' },
+    { title: 'Album Milestones', content: '"Timeless" breaking records, a testament to his enduring artistry.', imgSrc: 'https://images.unsplash.com/photo-1652092956602-8da6348b986f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtdXNpYyUyMGF3YXJkfGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'music award' },
+    { title: 'Atlanta Roots', content: 'His formative years in Atlanta infused his music with global appeal.', imgSrc: 'https://images.unsplash.com/photo-1465138456624-660a77cb151f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxBdGxhbnRhJTIwY2l0eXNjYXBlfGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'Atlanta cityscape' },
+    { title: 'Philanthropic Heart', content: 'Beyond music, Davido\'s generosity touches countless lives.', imgSrc: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21tdW5pdHklMjBjaGFyaXR5fGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'community charity' },
   ];
 
   return (
