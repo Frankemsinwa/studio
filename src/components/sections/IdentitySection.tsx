@@ -55,11 +55,11 @@ export function IdentitySection() {
         <div className="mt-12 text-center">
           <h3 className="text-2xl font-semibold mb-3 text-primary">Ambient Sound</h3>
           <p className="text-muted-foreground">
-            Imagine Davido's "Timeless" album playing softly in the background.
+            Imagine Davido's "5ive" album playing softly in the background.
           </p>
           {/* Placeholder for Spotify embed */}
           <div className="mt-4 p-4 bg-muted/30 rounded-md max-w-md mx-auto">
-            <p className="text-sm">[Embedded Spotify Playlist Placeholder]</p>
+<iframe src="https://open.spotify.com/embed/album/4jzhMxpTkAm2pxUuamulT8?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowFullScreen></iframe>
           </div>
         </div>
       </div>
