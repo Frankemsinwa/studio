@@ -26,7 +26,7 @@ export function HeroSection({ onEnterVibeClick }: HeroSectionProps) {
     
     for (let i = 0; i < NUM_STARS; i++) {
       const size = Math.random() * 2 + 1; // Star size between 1px and 3px
-      const animationDuration = Math.random() * 25 + 20; // Duration 20s to 45s
+      const animationDuration = Math.random() * 2 + 20; // Duration 2s to 20s
       const animationDelay = Math.random() * 15; // Delay 0s to 15s
       
       const selectedAnimationClass = animationClasses[Math.floor(Math.random() * animationClasses.length)];
