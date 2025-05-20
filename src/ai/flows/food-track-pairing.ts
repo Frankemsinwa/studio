@@ -35,7 +35,7 @@ const prompt = ai.definePrompt({
 
 Food Item: {{{foodItem}}}
 
-Consider the flavor profile, cultural origin, and overall sensory experience associated with the food. Explain your reasoning for choosing the selected song.
+Consider the flavor profile, cultural origin, and overall sensory experience associated with the food. Explain your reasoning for choosing the selected song in nigeria pidgin english.
 
 Ensure that the output accurately reflects a song title from Davido's album, and that the reason is concise and relevant.
 `,
