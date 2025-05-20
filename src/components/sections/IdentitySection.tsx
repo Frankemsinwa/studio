@@ -2,7 +2,6 @@
 'use client';
 
 import Image from 'next/image';
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'; // Using scroll area for horizontal content
 
 export function IdentitySection() {
   const stories = [
@@ -19,8 +18,9 @@ export function IdentitySection() {
         backgroundImage: `linear-gradient(to right, hsl(var(--primary) / 0.1), transparent 2px), linear-gradient(to bottom, hsl(var(--primary) / 0.1), transparent 2px)`,
         backgroundSize: `20px 20px`,
       }}></div>
+      
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-primary text-glow-gold">i</span>DENTITY
           </h2>
@@ -29,40 +29,76 @@ export function IdentitySection() {
           </p>
         </div>
 
-        {/* Simulating a vertical scroll strip feel with horizontal scrolling cards */}
-        <ScrollArea className="w-full whitespace-nowrap rounded-md">
-          <div className="flex w-max space-x-6 pb-4">
+        {/* Journey/Timeline Layout */}
+        <div className="relative">
+          {/* The main timeline "spine" - visible on md+ */}
+          <div className="hidden md:block absolute w-1 bg-primary/30 top-0 bottom-0 left-1/2 transform -translate-x-1/2 rounded-full"></div>
+
+          <div className="space-y-12 md:space-y-0"> {/* Handles spacing for mobile cards */}
             {stories.map((story, index) => (
-              <div key={index} className="overflow-hidden rounded-lg shadow-xl w-[300px] bg-background border border-border hover:border-primary transition-all duration-300 transform hover:-translate-y-1">
-                <Image
-                  src={story.imgSrc}
-                  alt={story.title}
-                  width={400}
-                  height={600}
-                  className="w-full h-[200px] object-cover"
-                  data-ai-hint={story.hint}
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-primary mb-2">{story.title}</h3>
-                  <p className="text-sm text-muted-foreground whitespace-normal h-20 overflow-y-auto">{story.content}</p>
+              <div key={index} className={`md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-x-8 items-start ${index < stories.length -1 ? 'mb-12 md:mb-24' : 'mb-0'}`}>
+                
+                {/* Left Content Area (or spacer) */}
+                <div className={`md:col-start-1 ${index % 2 !== 0 ? 'md:text-right' : ''}`}>
+                  {index % 2 === 0 && (
+                    <div className="bg-background/80 backdrop-blur-md border-border hover:border-primary rounded-lg shadow-xl p-6 relative transition-all duration-300">
+                      {/* Mobile node indicator */}
+                      <div className="md:hidden absolute top-1/2 -translate-y-1/2 -left-3 w-6 h-6 rounded-full bg-primary border-[3px] border-background shadow-md"></div>
+                      <Image
+                        src={story.imgSrc}
+                        alt={story.title}
+                        width={400}
+                        height={250}
+                        className="w-full h-auto object-cover rounded-md mb-4 shadow-md"
+                        data-ai-hint={story.hint}
+                      />
+                      <h3 className="text-xl lg:text-2xl font-semibold text-primary mb-2">{story.title}</h3>
+                      <p className="text-sm lg:text-base text-muted-foreground">{story.content}</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Node on the Spine (Center Column for Desktop) */}
+                <div className="hidden md:flex md:col-start-2 justify-center relative pt-2"> {/* pt-2 to align node with card content typically */}
+                  <div className="w-6 h-6 rounded-full bg-primary border-4 border-background shadow-lg z-10"></div>
+                </div>
+
+                {/* Right Content Area (or spacer) */}
+                <div className={`md:col-start-3 ${index % 2 === 0 ? '' : 'md:text-left'}`}>
+                  {index % 2 !== 0 && (
+                    <div className="bg-background/80 backdrop-blur-md border-border hover:border-primary rounded-lg shadow-xl p-6 relative transition-all duration-300">
+                      {/* Mobile node indicator */}
+                       <div className="md:hidden absolute top-1/2 -translate-y-1/2 -left-3 w-6 h-6 rounded-full bg-primary border-[3px] border-background shadow-md"></div>
+                      <Image
+                        src={story.imgSrc}
+                        alt={story.title}
+                        width={400}
+                        height={250}
+                        className="w-full h-auto object-cover rounded-md mb-4 shadow-md"
+                        data-ai-hint={story.hint}
+                      />
+                      <h3 className="text-xl lg:text-2xl font-semibold text-primary mb-2">{story.title}</h3>
+                      <p className="text-sm lg:text-base text-muted-foreground">{story.content}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
+        </div>
 
-        <div className="mt-12 text-center">
+        {/* Ambient Sound Section - Preserved */}
+        <div className="mt-16 md:mt-24 text-center">
           <h3 className="text-2xl font-semibold mb-3 text-primary">Ambient Sound</h3>
           <p className="text-muted-foreground">
             Imagine Davido's "5ive" album playing softly in the background.
           </p>
-          {/* Placeholder for Spotify embed */}
           <div className="mt-4 p-4 bg-muted/30 rounded-md max-w-md mx-auto">
-<iframe src="https://open.spotify.com/embed/album/4jzhMxpTkAm2pxUuamulT8?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowFullScreen></iframe>
+            <iframe src="https://open.spotify.com/embed/album/4jzhMxpTkAm2pxUuamulT8?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowFullScreen></iframe>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
