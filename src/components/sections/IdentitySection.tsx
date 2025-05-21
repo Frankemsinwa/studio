@@ -3,15 +3,18 @@
 
 import Image from 'next/image';
 import lagosMarketImage from '@/assets/img/_Another view of Nnamdi Azikiwe and Idumota Market in the 1980s_ While the streets are usually___.jpg';
+import jellofSuya from '@/assets/img/jellof-suya.jpg';
+import fiveAlbum from '@/assets/img/5ive-album.jpg';
+import davidoDonation from '@/assets/img/davido-donation.jpg';
 
 export function IdentitySection() {
 
   const stories = [
     { title: 'Lagos Love', content: 'Davido\'s heart beats for Lagos, the vibrant city that shaped him.', imgSrc: lagosMarketImage, hint: 'Lagos market 1980s' },
-    { title: 'Jollof & Suya', content: 'His go-to comfort foods: a plate of smoky Jollof and spicy Suya.', imgSrc: 'https://images.unsplash.com/photo-1665556899022-9761f95769e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxqb2xsb2YlMjBzdXlhfGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'jollof suya' },
-    { title: 'Album Milestones', content: '"Timeless" breaking records, a testament to his enduring artistry.', imgSrc: 'https://images.unsplash.com/photo-1652092956602-8da6348b986f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtdXNpYyUyMGF3YXJkfGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'music award' },
+    { title: 'Jollof & Suya', content: 'His go-to comfort foods: a plate of smoky Jollof and spicy Suya.', imgSrc: jellofSuya, hint: 'jollof suya' },
+    { title: 'Album Milestones', content: '"5ive Album" breaking records, a testament to his enduring artistry.', imgSrc: fiveAlbum, hint: 'music award' },
     { title: 'Atlanta Roots', content: 'His formative years in Atlanta infused his music with global appeal.', imgSrc: 'https://images.unsplash.com/photo-1465138456624-660a77cb151f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxBdGxhbnRhJTIwY2l0eXNjYXBlfGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'Atlanta cityscape' },
-    { title: 'Philanthropic Heart', content: 'Beyond music, Davido\'s generosity touches countless lives.', imgSrc: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21tdW5pdHklMjBjaGFyaXR5fGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'community charity' },
+    { title: 'Philanthropic Heart', content: 'Beyond music, Davido\'s generosity touches countless lives.', imgSrc: davidoDonation, hint: 'community charity' },
   ];
 
   return (
