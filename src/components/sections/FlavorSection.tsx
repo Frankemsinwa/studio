@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { motion } from 'framer-motion'; // For potential future animations
+import { motion } from 'framer-motion'; 
 
 export function FlavorSection() {
   const dishes = [
@@ -14,6 +14,16 @@ export function FlavorSection() {
     { name: 'Chapman Chill', description: 'Our signature refreshing Nigerian Chapman cocktail.', imgSrc: 'https://placehold.co/600x400.png', hint: 'chapman cocktail' },
   ];
 
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const listItemVariants = (index: number) => ({
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.3, delay: index * 0.1 } },
+  });
+
   return (
     <section id="flavor-section" className="py-16 md:py-24 bg-background/95 relative">
       <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -22,16 +32,28 @@ export function FlavorSection() {
       }}></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-4"
+            initial="hidden"
+            whileInView="visible"
+            variants={textVariants}
+            viewport={{ once: true }}
+          >
             <span className="text-primary text-glow-gold">F</span>LAVOR
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            variants={{ ...textVariants, visible: { ...textVariants.visible, transition: { ...textVariants.visible.transition, delay: 0.2 }}}}
+            viewport={{ once: true }}
+          >
             Dive into the rich tastes of 5iVE Kitchen. Experience high-quality dishes where every bite tells a story.
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {dishes.slice(0,3).map((dish, index) => ( // Displaying first 3 for brevity, can be expanded
+          {dishes.slice(0,3).map((dish, index) => ( 
             <motion.div
               key={dish.name}
               initial={{ opacity: 0, y: 50 }}
@@ -64,12 +86,33 @@ export function FlavorSection() {
           ))}
         </div>
          <div className="text-center mt-12">
-          <h3 className="text-3xl font-semibold mb-6">Top 5 Dishes from 5iVE Kitchen</h3>
+          <motion.h3 
+            className="text-3xl font-semibold mb-6"
+            initial="hidden"
+            whileInView="visible"
+            variants={textVariants}
+            viewport={{ once: true }}
+          >
+            Top 5 Dishes from 5iVE Kitchen
+          </motion.h3>
           <ul className="space-y-2 text-muted-foreground max-w-md mx-auto">
-            {dishes.map(dish => <li key={dish.name} className="p-2 bg-card rounded-md shadow-sm hover:bg-muted transition-colors">{dish.name}</li>)}
+            {dishes.map((dish, index) => (
+              <motion.li 
+                key={dish.name} 
+                className="p-2 bg-card rounded-md shadow-sm hover:bg-muted transition-colors"
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                variants={listItemVariants(index)}
+                viewport={{ once: true }}
+              >
+                {dish.name}
+              </motion.li>
+            ))}
           </ul>
         </div>
       </div>
     </section>
   );
 }
+

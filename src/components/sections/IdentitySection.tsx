@@ -2,8 +2,11 @@
 'use client';
 
 import Image from 'next/image';
+// Removed problematic import: import nnamdiAzikiweImage from '/src/assets/img/_Another view of Nnamdi Azikiwe and Idumota Market in the 1980s_ While the streets are usually___.jpg';
 
 export function IdentitySection() {
+  // Removed console.log(nnamdiAzikiweImage);
+
   const stories = [
     { title: 'Lagos Love', content: 'Davido\'s heart beats for Lagos, the vibrant city that shaped him.', imgSrc: 'https://images.unsplash.com/photo-1719314313652-d9835e0c52c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxMYWdvcyUyMHNreWxpbmV8ZW58MHx8fHwxNzQ3NjUxMTE1fDA&ixlib=rb-4.1.0&q=80&w=1080', hint: 'Lagos skyline' },
     { title: 'Jollof & Suya', content: 'His go-to comfort foods: a plate of smoky Jollof and spicy Suya.', imgSrc: 'https://images.unsplash.com/photo-1665556899022-9761f95769e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxqb2xsb2YlMjBzdXlhfGVufDB8fHx8MTc0NzY1MTExNXww&ixlib=rb-4.1.0&q=80&w=1080', hint: 'jollof suya' },
@@ -13,7 +16,10 @@ export function IdentitySection() {
   ];
 
   return (
-    <section id="identity-section" className="py-16 md:py-24 bg-card/50 relative">
+    <section id="identity-section" className="py-16 md:py-24 bg-card/50 relative overflow-hidden">
+      {/* Decorative light flare */}
+      <div className="absolute -top-20 -left-20 w-72 h-72 md:w-96 md:h-96 bg-primary/10 rounded-full blur-[100px] md:blur-[150px] opacity-70 pointer-events-none"></div>
+      
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: `linear-gradient(to right, hsl(var(--primary) / 0.1), transparent 2px), linear-gradient(to bottom, hsl(var(--primary) / 0.1), transparent 2px)`,
         backgroundSize: `20px 20px`,
@@ -94,11 +100,19 @@ export function IdentitySection() {
             Imagine Davido's "5ive" album playing softly in the background.
           </p>
           <div className="mt-4 p-4 bg-muted/30 rounded-md max-w-md mx-auto">
-            <iframe src="https://open.spotify.com/embed/album/4jzhMxpTkAm2pxUuamulT8?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowFullScreen></iframe>
+            <iframe 
+              style={{ borderRadius: '12px' }} 
+              src="https://open.spotify.com/embed/album/4jzhMxpTkAm2pxUuamulT8?utm_source=generator&theme=0" 
+              width="100%" 
+              height="352" 
+              frameBorder="0" 
+              allowFullScreen={true} 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+            </iframe>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
